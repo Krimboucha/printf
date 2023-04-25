@@ -6,7 +6,7 @@
 int main()
 {
 	int p;
-	p = _printf("hello %c world",'k');
+	p = _printf("hello %s world","siek,esivc,    ");
 	printf("%d",p);
 	return (0);
 }
