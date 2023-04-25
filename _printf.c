@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			if (format[i] == 'c')
 			{
 				char c = (char) va_arg(args, int);
-				_printc(args);
+				write(1, &c, 1);
 				count++;
 			}
 			else if (format[i] == 's')
@@ -44,6 +44,7 @@ int _printf(const char *format, ...)
 				write(1, &format[i], 1);
 				count++;
 			}
+			j = 0;
 		}
 		else
 		{
@@ -54,19 +55,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
-}
-
-/**
- * _printc - prints %c
- * @l: va_list
- *
- * Return: int
- */
-
-int _printc(va_list t)
-{
-	int c = va_arg(t, int);
-
-	write(1, &c, 1);
-	return (1);
 }
