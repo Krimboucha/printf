@@ -2,6 +2,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 /** _printf - counts number of characters printed
  * @format: pointer to char
  *
@@ -10,9 +11,7 @@
 
 int _printf(const char *format, ...)
 {
-	int count;
-	int i;
-	int j;
+	int count, i, j;
 	va_list args;
 	va_start(args, format);
 
