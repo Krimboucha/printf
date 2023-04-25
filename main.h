@@ -18,4 +18,11 @@ int _printf(const char *format, ...);
  * Return: int
  */
 int _printc(va_list t);
+/**
+ * _strlen - return length of string
+ * @s: pointer to char
+ *
+ * Return: length number with null terminator
+ */
+int _strlen(char *s);
 #endif
