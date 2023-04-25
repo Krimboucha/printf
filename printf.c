@@ -12,11 +12,13 @@ int _printf(const char *format, ...)
 {
 	int count;
 	int i;
+	int j;
 	va_list args;
 	va_start(args, format);
 
 	count = 0;
 	i = 0;
+	j = 0;
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -31,10 +33,11 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				char *str = va_arg(args, char *);
-				for (int j = 0; str[j] != '\0'; j++)
+				while (str[j])
 				{
 					write(1, &str[j], sizeof(char));
 					count++;
+					j++;
 				}
 			}
 			else if (format[i] == '%')
