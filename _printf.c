@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			if (format[i] == 'c')
 			{
 				char c = (char) va_arg(args, int);
-				write(1, &c, sizeof(char));
+				write(1, &c, 1);
 				count++;
 			}
 			else if (format[i] == 's')
@@ -35,20 +35,20 @@ int _printf(const char *format, ...)
 				char *str = va_arg(args, char *);
 				while (str[j])
 				{
-					write(1, &str[j], sizeof(char));
+					write(1, &str[j], 1);
 					count++;
 					j++;
 				}
 			}
 			else if (format[i] == '%')
 			{
-				write(1, &format[i], sizeof(char));
+				write(1, &format[i], 1);
 				count++;
 			}
 		}
 		else
 		{
-			write(1, &format[i], sizeof(char));
+			write(1, &format[i], 1);
 			count++;
 		}
 		i++;
