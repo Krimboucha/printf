@@ -46,7 +46,10 @@ int	_printf(const char *format, ...)
 			else if (format[i] == '%')
 				count += _putchar('%');
 			else
-				return (-1);
+			{
+				count += _putchar('%');
+				i--;
+			}
 		}
 		else
 			count += _putchar(format[i]);
