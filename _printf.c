@@ -35,7 +35,7 @@ int	_printf(const char *format, ...)
 			{
 				str = va_arg(args, char *);
 				if (!str)
-					count += _putstr("(null)");
+					return (count += _putstr("(null)"));
 				else
 					count += _putstr(str);
 			}
