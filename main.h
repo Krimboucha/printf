@@ -10,7 +10,7 @@
  *
  * Return: number of characters printed
  */
-int _printf(const char *format, ...);
+int	_printf(const char *format, ...);
 
 /**
  * _printc - prints a character with %c specifier
@@ -18,7 +18,7 @@ int _printf(const char *format, ...);
  *
  * Return: number of characters printed (1)
  */
-int _printc(va_list t);
+int	_printc(va_list t);
 
 /**
  * _strlen - return length of string
@@ -26,7 +26,7 @@ int _printc(va_list t);
  *
  * Return: length of the string without null terminator
  */
-int _strlen(char *s);
+int	_strlen(char *s);
 
 /**
  * _putchar - writes a character to stdout
@@ -34,7 +34,7 @@ int _strlen(char *s);
  *
  * Return: 1 on success, -1 on error
  */
-int _putchar(char c);
+int	_putchar(char c);
 
 /**
  * _putstr - writes a string to stdout
@@ -42,7 +42,7 @@ int _putchar(char c);
  *
  * Return: number of characters written
  */
-int _putstr(char *str);
+int	_putstr(char *str);
 
 /**
  * _putnbr - writes an integer to stdout
@@ -50,6 +50,6 @@ int _putstr(char *str);
  *
  * Return: count of characters written
  */
-int _putnbr(int n);
+int	_putnbr(int n);
 
 #endif

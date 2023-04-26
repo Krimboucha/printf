@@ -40,7 +40,7 @@ int	_putchar(char c)
 int	_putstr(char *str)
 {
 	int	i;
-	int count;
+	int	count;
 
 	count = 0;
 	i = 0;
