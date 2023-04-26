@@ -35,8 +35,9 @@ int	_printf(const char *format, ...)
 			{
 				str = va_arg(args, char *);
 				if (!str)
-					str = "(null)";
-				count += _putstr(str);
+					count += _putstr("(null)");
+				else
+					count += _putstr(str);
 			}
 			else if (format[i] == 'd' || format[i] == 'i')
 				count += _putnbr(va_arg(args, int));
