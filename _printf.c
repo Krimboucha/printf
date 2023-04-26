@@ -21,6 +21,8 @@ int	_printf(const char *format, ...)
 	str = NULL;
 	count = 0;
 	i = 0;
+	if (format == NULL)
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
