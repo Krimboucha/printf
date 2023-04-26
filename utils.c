@@ -61,10 +61,10 @@ int	_putnbr(int n)
 	int	count;
 
 	count = 0;
-    if (n == 0)
-    {
-        return (_putchar('0'));
-    }
+	if (n == 0)
+	{
+		return (_putchar('0'));
+	}
 	if (n == -2147483648)
 	{
 		count += _putstr("-2147483648");
@@ -77,7 +77,7 @@ int	_putnbr(int n)
 	}
 	if (n / 10)
 	{
-		_putnbr(n / 10);
+		count += _putnbr(n / 10);
 	}
 	count += _putchar((n % 10) + '0');
 	return (count);
