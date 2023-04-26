@@ -1,7 +1,7 @@
-#include <stdarg.h>
 #include "main.h"
+#include <stdarg.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include <unistd.h>
 
 /** _printf - counts number of characters printed
  * @format: pointer to char
@@ -9,64 +9,52 @@
  * Return: int
  */
 
-int _printf(const char *format, ...)
+int	_printf(const char *format, ...)
 {
-	int count, i, j;
-	va_list args;
-	va_start(args, format);
+	va_list	args;
+	char	c;
+	char	*str;
+	int		count;
+	int		i;
 
+	va_start(args, format);
+	str = NULL;
 	count = 0;
 	i = 0;
-	j = 0;
-	while (format[i])
+	if (format == NULL)
+		return (-1);
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			if (format[i] == 'c')
 			{
-				char c = (char) va_arg(args, int);
-				_printc(args);
-				count++;
+				c = va_arg(args, int);
+				count += _putchar(c);
 			}
 			else if (format[i] == 's')
 			{
-				char *str = va_arg(args, char *);
-				while (str[j])
-				{
-					write(1, &str[j], 1);
-					count++;
-					j++;
-				}
+				str = va_arg(args, char *);
+				if (!str)
+					count += _putstr("(null)");
+				else
+					count += _putstr(str);
 			}
+			else if (format[i] == 'd' || format[i] == 'i')
+				count += _putnbr(va_arg(args, int));
 			else if (format[i] == '%')
+				count += _putchar('%');
+			else
 			{
-				write(1, &format[i], 1);
-				count++;
+				return (-1);
+				
 			}
 		}
 		else
-		{
-			write(1, &format[i], 1);
-			count++;
-		}
+			count += _putchar(format[i]);
 		i++;
 	}
 	va_end(args);
 	return (count);
-}
-
-/**
- * _printc - prints %c
- * @l: va_list
- *
- * Return: int
- */
-
-int _printc(va_list t)
-{
-	int c = va_arg(t, int);
-
-	write(1, &c, 1);
-	return (1);
 }
