@@ -16,12 +16,12 @@ int	_printf(const char *format, ...)
 	va_list	args;
 	char	c;
 	char	*str;
+	int count;
+	int i;
 
-	int count, i, j;
 	va_start(args, format);
 	count = 0;
 	i = 0;
-	j = 0;
 	while (format[i])
 	{
 		if (format[i] == '%')
