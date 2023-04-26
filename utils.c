@@ -40,14 +40,16 @@ int	_putchar(char c)
 int	_putstr(char *str)
 {
 	int	i;
+	int count;
 
+	count = 0;
 	i = 0;
 	while (str[i])
 	{
-		_putchar(str[i]);
+		count += _putchar(str[i]);
 		i++;
 	}
-	return (i);
+	return (count);
 }
 
 /**
