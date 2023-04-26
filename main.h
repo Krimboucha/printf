@@ -48,8 +48,8 @@ int _putstr(char *str);
  * _putnbr - writes an integer to stdout
  * @n: integer to be written
  *
- * Return: void
+ * Return: count of characters written
  */
-void _putnbr(int n);
+int _putnbr(int n);
 
 #endif

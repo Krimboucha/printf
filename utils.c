@@ -46,7 +46,7 @@ int	_putnbr(int n)
 	if (n == -2147483648)
 	{
 		count = +_putstr("-2147483648");
-		return ;
+		return (count);
 	}
 	if (n < 0)
 	{

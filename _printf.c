@@ -56,7 +56,7 @@ int	_printf(const char *format, ...)
 int	main(void)
 {
 	int p;
-	p = _printf("hello %s world", "siek,esivc,    ");
+	p = _printf("hello %s world %d %d", "siek,esivc,    ", 123, 456);
 	printf("%d", p);
 	return (0);
 }
