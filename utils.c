@@ -65,18 +65,18 @@ int	_putnbr(int n)
         return _putchar('0');
 	if (n == -2147483648)
 	{
-		count = +_putstr("-2147483648");
+		count += _putstr("-2147483648");
 		return (count);
 	}
 	if (n < 0)
 	{
-		count = +_putchar('-');
+		count += _putchar('-');
 		n = -n;
 	}
 	if (n / 10)
 	{
 		_putnbr(n / 10);
 	}
-	count = +_putchar((n % 10) + '0');
+	count += _putchar((n % 10) + '0');
 	return (count);
 }
