@@ -1,7 +1,5 @@
 #include "main.h"
-#include "utils.c"
 #include <stdarg.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
