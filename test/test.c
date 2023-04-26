@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include "main.h"
 #include <stdio.h>
+
 int main()
 {
 	int p;
-	p = _printf("hello %s world","siek,esivc,    ");
-	printf("%d",p);
+	//p = _printf("hello %s world   %s","siek,esivc,    ");
+	char *str = NULL;
+	printf("hello %s world   %s", str, "siek,esivc,    ");
 	return (0);
 }
