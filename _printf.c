@@ -28,23 +28,23 @@ int	_printf(const char *format, ...)
 			if (format[i] == 'c')
 			{
 				c = (char)va_arg(args, int);
-				count = +_putchar(c);
+				count += _putchar(c);
 			}
 			else if (format[i] == 's')
 			{
 				str = va_arg(args, char *);
 				if (!str)
-					count = +_putstr("(null)");
+					count += _putstr("(null)");
 				else
 					count += _putstr(str);
 			}
 			else if (format[i] == 'd' || format[i] == 'i')
-				count = +_putnbr(va_arg(args, int));
+				count += _putnbr(va_arg(args, int));
 			else if (format[i] == '%')
-				count = +_putchar('%');
+				count += _putchar('%');
 		}
 		else
-			count = +_putchar(format[i]);
+			count += _putchar(format[i]);
 		i++;
 	}
 	va_end(args);

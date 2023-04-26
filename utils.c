@@ -61,6 +61,8 @@ int	_putnbr(int n)
 	int	count;
 
 	count = 0;
+    if (n == 0)
+        return _putchar('0');
 	if (n == -2147483648)
 	{
 		count = +_putstr("-2147483648");
