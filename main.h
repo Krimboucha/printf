@@ -1,36 +1,55 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
 # include <stdarg.h>
 # include <unistd.h>
-#include <unistd.h>
 
-/** _printf - counts number of characters printed
- * @format: pointer to char
+/**
+ * _printf - counts number of characters printed
+ * @format: format string containing specifiers
  *
- * Return: int
+ * Return: number of characters printed
  */
-
 int _printf(const char *format, ...);
 
 /**
- * _printc - prints %c
- * @l: va_list
+ * _printc - prints a character with %c specifier
+ * @t: va_list containing the character to print
  *
- * Return: int
+ * Return: number of characters printed (1)
  */
 int _printc(va_list t);
+
 /**
  * _strlen - return length of string
- * @s: pointer to char
+ * @s: pointer to the string
  *
- * Return: length number with null terminator
+ * Return: length of the string without null terminator
  */
 int _strlen(char *s);
 
+/**
+ * _putchar - writes a character to stdout
+ * @c: character to be written
+ *
+ * Return: 1 on success, -1 on error
+ */
 int _putchar(char c);
 
+/**
+ * _putstr - writes a string to stdout
+ * @str: pointer to the string to be written
+ *
+ * Return: number of characters written
+ */
 int _putstr(char *str);
 
-int _putnbr(int n);
+/**
+ * _putnbr - writes an integer to stdout
+ * @n: integer to be written
+ *
+ * Return: void
+ */
+void _putnbr(int n);
 
 #endif
