@@ -2,6 +2,7 @@
 # define FT_PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
+#include <unistd.h>
 
 /** _printf - counts number of characters printed
  * @format: pointer to char
@@ -25,4 +26,11 @@ int _printc(va_list t);
  * Return: length number with null terminator
  */
 int _strlen(char *s);
+
+int _putchar(char c);
+
+int _putstr(char *str);
+
+int _putnbr(int n);
+
 #endif
