@@ -18,4 +18,32 @@ int _printf(const char *format, ...);
  * Return: int
  */
 int _printc(va_list t);
+
+/**
+ * _puststr - prints %s
+ * @l: va_list
+ *
+ * Return: int
+ */
+
+int _putstr(char *str);
+
+/**
+ * _putchar - prints %i
+ * @l: va_list
+ *
+ * Return: int
+ */
+
+int _putchar(char c);
+
+/**
+ * strlen - length of string
+ * @l: string
+ *
+ * Return: int
+ */
+
+int _strlen(char *s);
+
 #endif

@@ -1,7 +1,9 @@
-#include <stdarg.h>
 #include "main.h"
-#include <stdlib.h>
+#include "utils.c"
+#include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /** _printf - counts number of characters printed
  * @format: pointer to char
@@ -9,12 +11,14 @@
  * Return: int
  */
 
-int _printf(const char *format, ...)
+int	_printf(const char *format, ...)
 {
-	int count, i, j;
-	va_list args;
-	va_start(args, format);
+	va_list	args;
+	char	c;
+	char	*str;
 
+	int count, i, j;
+	va_start(args, format);
 	count = 0;
 	i = 0;
 	j = 0;
@@ -25,54 +29,34 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == 'c')
 			{
-				char c = (char) va_arg(args, int);
-				write(1, &c, 1);
-				count++;
+				c = (char)va_arg(args, int);
+				count = +_putchar(c);
 			}
 			else if (format[i] == 's')
 			{
-				char *str = va_arg(args, char *);
-				while (str[j])
-				{
-					write(1, &str[j], 1);
-					count++;
-					j++;
-				}
-				j = 0;
+				str = va_arg(args, char *);
+				if (!str)
+					count = +_putstr("(null)");
+				else
+					count += _putstr(str);
 			}
+			else if (format[i] == 'd' || format[i] == 'i')
+				count = +_putnbr(va_arg(args, int));
 			else if (format[i] == '%')
-			{
-				write(1, &format[i], 1);
-				count++;
-			}
+				count = +_putchar('%');
 		}
 		else
-		{
-			write(1, &format[i], 1);
-			count++;
-		}
+			count = +_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
 	return (count);
 }
 
-/**
- * _strlen - return length of string
- * @s: pointer to char
- *
- * Return: length number with null terminator
- */
-
-int _strlen(char *s)
+int	main(void)
 {
-	int len;
-
-	len = 0;
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
+	int p;
+	p = _printf("hello %s world", "siek,esivc,    ");
+	printf("%d", p);
+	return (0);
 }
