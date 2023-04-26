@@ -25,6 +25,12 @@ int	_putchar(char c)
 	return (write(1, &c, 1));
 }
 
+/**
+ * _putstr - writes a string to stdout
+ * @str: pointer to the string to be written
+ *
+ * Return: number of characters written
+ */
 int	_putstr(char *str)
 {
 	int	i;
@@ -38,6 +44,12 @@ int	_putstr(char *str)
 	return (i);
 }
 
+/**
+ * _putnbr - writes an integer to stdout
+ * @n: integer to be written
+ *
+ * Return: count of characters written
+ */
 int	_putnbr(int n)
 {
 	int	count;
